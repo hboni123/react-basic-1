@@ -1,9 +1,22 @@
 import React from 'react'
 
-const Winner = () => {
+const Winner = ({ isWinnerFound, currentUser }) => {
+  const win = (isWinnerFound) => {
+    if (isWinnerFound){
+      if(currentUser === 'x'){
+        return "Player 1"
+      }else{
+        return "Player 2"
+      }
+    }else{
+      return "NO ONE"
+    }
+  }
   return (
     <>
-        Winner
+        <h1>
+          Winner is {win(isWinnerFound)}
+        </h1>
     </>
   )
 }

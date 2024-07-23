@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
-const TicTacToe = ({ count, setCount }) => {
+const TicTacToe = ({ isWinnerFound, setIsWinnerFound, currentUser, setCurrentUser }) => {
   const [matrix, setMatrix] = useState([["","",""],["","",""],["","",""]]);
-  const [currentUser, setCurrentUser] = useState('x');
-  const [isWinnerFound, setIsWinnerFound] = useState(false);
 
   const onCellClick = (row, col) => {
     if (matrix[row][col] === "" && !isWinnerFound) {
@@ -13,7 +11,7 @@ const TicTacToe = ({ count, setCount }) => {
 
       if (findWinner(matrixCopy, currentUser)) {
         setIsWinnerFound(true);
-        alert(`Player ${currentUser} wins!`);
+        //alert(`Player ${currentUser} wins!`);
       } else {
         setCurrentUser(currentUser === 'x' ? 'o' : 'x');
       }
@@ -74,6 +72,7 @@ const TicTacToe = ({ count, setCount }) => {
           </tr>
         </tbody>
       </table>
+      
     </>
   );
 };

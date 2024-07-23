@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Chance = () => {
+const Chance = ({currentUser}) => {
   return (
     <>
-        Chance
+      <h1>
+        Current user :  {currentUser}
+      </h1>
+        
     </>
   )
 }
