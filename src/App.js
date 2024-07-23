@@ -12,8 +12,10 @@ function App() {
   return (
     <>
       <Chance currentUser = {currentUser}/>
+
       <TicTacToe isWinnerFound = {isWinnerFound} setIsWinnerFound = {setIsWinnerFound}
         currentUser = {currentUser} setCurrentUser = {setCurrentUser}  />
+        
       <Winner isWinnerFound = {isWinnerFound} currentUser = {currentUser} />
     </>
   );

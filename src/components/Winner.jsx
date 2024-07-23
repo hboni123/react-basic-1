@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Winner = ({ isWinnerFound, currentUser }) => {
+
+  //function to find winner
   const win = (isWinnerFound) => {
     if (isWinnerFound){
       if(currentUser === 'x'){
@@ -15,7 +17,7 @@ const Winner = ({ isWinnerFound, currentUser }) => {
   return (
     <>
         <h1>
-          Winner is {win(isWinnerFound)}
+          Winner is {win(isWinnerFound)}     
         </h1>
     </>
   )

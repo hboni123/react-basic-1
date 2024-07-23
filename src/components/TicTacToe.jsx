@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 const TicTacToe = ({ isWinnerFound, setIsWinnerFound, currentUser, setCurrentUser }) => {
   const [matrix, setMatrix] = useState([["","",""],["","",""],["","",""]]);
 
+  //changing cell to click the cell
   const onCellClick = (row, col) => {
     if (matrix[row][col] === "" && !isWinnerFound) {
       let matrixCopy = matrix.map((row) => row.slice());
       matrixCopy[row][col] = currentUser;
       setMatrix(matrixCopy);
 
-      if (findWinner(matrixCopy, currentUser)) {
+      if (findWinner(matrixCopy, currentUser)) { //check if winner is found 
         setIsWinnerFound(true);
         //alert(`Player ${currentUser} wins!`);
       } else {
